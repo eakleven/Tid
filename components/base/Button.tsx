@@ -12,7 +12,7 @@ interface Props {
 	disabled?: boolean
 }
 
-export const Button: FC<Props> = ({
+const Button: FC<Props> = ({
 	title,
 	onPress,
 	txtColor = 'text2',

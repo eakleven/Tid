@@ -18,7 +18,7 @@ const ArchiveStackScreen = () => {
 				headerStyle: { backgroundColor: theme.colors.bg2 },
 				headerTitleAlign: 'center',
 				headerTitleStyle: {
-					color: theme.colors.text1,
+					color: theme.colors.text2,
 				},
 
 				headerTintColor: theme.colors.text1,

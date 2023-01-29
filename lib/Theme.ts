@@ -1,8 +1,8 @@
 import { createTheme } from '@shopify/restyle'
 
 const palette = {
-	primary: '#00A8CC',
-	tertiary: '#0C7B93',
+	primary: '#1f61a4',
+	tertiary: '#1c78a4',
 
 	quaternary: '#142850',
 	secondary: '#27496D',
@@ -26,6 +26,9 @@ const theme = createTheme({
 
 		text1: palette.black,
 		text2: palette.white,
+
+		danger: palette.danger,
+		warning: palette.warning,
 	},
 	spacing: {
 		s: 8,
@@ -56,5 +59,6 @@ const theme = createTheme({
 export type Theme = typeof theme
 export type RestyleColor = keyof Theme['colors']
 export type RestyleTxtVariant = keyof Theme['textVariants']
+export type RestyleSpacing = keyof Theme['spacing']
 
 export default theme

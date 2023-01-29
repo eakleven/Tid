@@ -10,9 +10,11 @@ import { ProfileStackParamList } from '../../components/appNavigator/ProfileStac
 import Button from '../../components/base/Button'
 import Box from '../../components/base/Box'
 import Text from '../../components/base/Text'
+import { getAuth } from 'firebase/auth'
+import { firebase } from '../../config/firebase'
 
 type NavigationProp = CompositeNavigationProp<
-	BottomTabNavigationProp<RootTabParamList, 'Profile'>,
+	BottomTabNavigationProp<RootTabParamList, 'Settings'>,
 	NativeStackNavigationProp<ProfileStackParamList>
 >
 
@@ -22,11 +24,15 @@ interface Props {
 
 const ProfileScreen: FC<Props> = ({ navigation }) => {
 	const { navigate } = useNavigation<NavigationProp>()
+	const auth = getAuth(firebase)
 
 	return (
 		<Box bg="bg1" flex={1}>
 			<Text variant="h2">Hei</Text>
-			<Button title={'Naviger'} onPress={() => navigate('Settings')} />
+			<Button
+				title={'Tilbake til settings'}
+				onPress={() => navigate('Settings')}
+			/>
 		</Box>
 	)
 }

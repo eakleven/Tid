@@ -7,7 +7,7 @@ import ProfileScreen from '../../screens/Settings/ProfileScreen'
 import SettingsScreen from '../../screens/Settings/SettingsScreen'
 
 export type ProfileStackParamList = {
-	Settings: undefined
+	SettingsScreen: undefined
 	ProfileScreen: undefined
 }
 
@@ -21,14 +21,14 @@ const ProfileStackScreen = () => {
 				headerStyle: { backgroundColor: theme.colors.bg2 },
 				headerTitleAlign: 'center',
 				headerTitleStyle: {
-					color: theme.colors.text1,
+					color: theme.colors.text2,
 				},
 
 				headerTintColor: theme.colors.text1,
 				headerShadowVisible: false,
 			}}
 		>
-			<ProfileStack.Screen name="Settings" component={SettingsScreen} />
+			<ProfileStack.Screen name="SettingsScreen" component={SettingsScreen} />
 			<ProfileStack.Screen
 				name="ProfileScreen"
 				component={ProfileScreen}

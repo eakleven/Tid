@@ -9,7 +9,7 @@ import ArchiveStack from './ArchiveStack'
 export type RootTabParamList = {
 	Home: undefined
 	Archive: undefined
-	Profile: undefined
+	Settings: undefined
 }
 
 const AppNavigator = () => {
@@ -36,7 +36,7 @@ const AppNavigator = () => {
 					}}
 				/>
 				<Tab.Screen
-					name="Profile"
+					name="Settings"
 					component={ProfileStack}
 					options={{
 						tabBarIcon: ({ color, size }) => (
