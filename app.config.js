@@ -2,8 +2,8 @@ import 'dotenv/config'
 
 export default {
 	expo: {
-		name: 'Tids',
-		slug: 'Tids',
+		name: 'Tid',
+		slug: 'Tid',
 		version: '1.0.0',
 		orientation: 'portrait',
 		icon: './assets/images/icon.png',
