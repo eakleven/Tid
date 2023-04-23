@@ -28,7 +28,11 @@ const ProfileStackScreen = () => {
 				headerShadowVisible: false,
 			}}
 		>
-			<ProfileStack.Screen name="SettingsScreen" component={SettingsScreen} />
+			<ProfileStack.Screen
+				name="SettingsScreen"
+				component={SettingsScreen}
+				options={{ title: 'Settings' }}
+			/>
 			<ProfileStack.Screen
 				name="ProfileScreen"
 				component={ProfileScreen}

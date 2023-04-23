@@ -46,7 +46,7 @@ const HourItem: FC<Props> = ({ hour }) => {
 						{dayjs(hour.date).format('DD.MM.YY')}
 					</Text>
 					<Text variant="h3" color="text2">
-						{hour.hours}
+						{hour.hours} timer
 					</Text>
 					<Text variant="h3" color="text2">
 						{parseInt(hour.salary) * parseInt(hour.hours)},-

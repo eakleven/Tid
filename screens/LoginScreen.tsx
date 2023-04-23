@@ -70,13 +70,18 @@ const LoginScreen: FC<Props> = ({ auth }) => {
 				</Text>
 				<Box paddingHorizontal="m">
 					<Text variant="body">Brukernavn</Text>
-					<TextInput label="username" onChangeText={setUsername} />
+					<TextInput
+						label="username"
+						value={username}
+						onChangeText={setUsername}
+					/>
 					<Text paddingTop="m" variant="body">
 						Passord
 					</Text>
 					<TextInput
 						secureTextEntry={true}
 						label="password"
+						value={password}
 						onChangeText={setPassword}
 					/>
 

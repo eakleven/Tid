@@ -1,4 +1,7 @@
-import { NativeStackNavigationProp, createNativeStackNavigator } from '@react-navigation/native-stack'
+import {
+	NativeStackNavigationProp,
+	createNativeStackNavigator,
+} from '@react-navigation/native-stack'
 import { useTheme } from '@shopify/restyle'
 import { Theme } from '../../lib/Theme'
 import AddHoursScreen, {
@@ -9,7 +12,6 @@ import ProjectScreen from '../../screens/Archive/ProjectScreen'
 import { CompositeNavigationProp } from '@react-navigation/native'
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
 import { RootTabParamList } from '../../components/appNavigator'
-
 
 export type ArchiveStackParamList = {
 	ArchiveScreen: undefined
@@ -43,7 +45,7 @@ const ArchiveStackScreen = () => {
 			<ArchiveStack.Screen
 				name="ArchiveScreen"
 				component={ArchiveScreen}
-				options={{ headerShown: true }}
+				options={{ headerShown: true, title: 'Archive' }}
 			/>
 			<ArchiveStack.Screen
 				name="ProjectScreen"
@@ -53,7 +55,7 @@ const ArchiveStackScreen = () => {
 			<ArchiveStack.Screen
 				name="AddHoursScreen"
 				component={AddHoursScreen}
-				options={{ headerShown: true }}
+				options={{ headerShown: true, title: 'Add hours' }}
 			/>
 		</ArchiveStack.Navigator>
 	)
