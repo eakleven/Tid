@@ -8,25 +8,9 @@ import theme from './lib/Theme'
 import store from './redux/store'
 import { getUser, setUser } from './redux/userSlice'
 import LoginScreen from './screens/LoginScreen'
-import { initializeApp } from 'firebase/app'
-import { auth, firebaseConfig } from './config/firebase'
-import {
-	getAuth,
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-} from 'firebase/auth'
+import { auth } from './config/firebase'
 
 export default function App() {
-	// const firebase = initializeApp(firebaseConfig)
-	// const auth = getAuth(firebase)
-
-	const handleSignOut = async () => {
-		try {
-			await auth.signOut()
-		} catch (error) {
-			console.log(error)
-		}
-	}
 	const [authorizedUser, setAuthorizedUser] = useState(false)
 
 	useEffect(() => {
