@@ -81,6 +81,10 @@ const LoginScreen: FC<Props> = ({ auth }) => {
 					/>
 
 					<Button title="Login" onPress={handleLogin} />
+					<Text paddingTop="m" variant="body">
+						Brukernavn testbruker: testbruker@test.com Passord testbruker:
+						Test123
+					</Text>
 				</Box>
 				<Box paddingHorizontal="m">
 					<Button title="Lag bruker" onPress={() => setShowSignUp(true)} />

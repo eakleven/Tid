@@ -49,6 +49,10 @@ const theme = createTheme({
 			fontSize: 18,
 			lineHeight: 20,
 		},
+		h3: {
+			fontSize: 16,
+			lineHeight: 18,
+		},
 		body: {
 			fontSize: 14,
 			lineHeight: 16,
