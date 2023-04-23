@@ -20,9 +20,9 @@ const HomeScreen = () => {
 	})
 
 	return (
-		<Box flex={1} bg="bg2">
+		<Box flex={1} bg="bg2" padding="m">
 			<Text variant="h1" color="text2">
-				Hei
+				Hei, {user?.firstName}
 			</Text>
 		</Box>
 	)
