@@ -4,10 +4,8 @@ import {
 	useNavigation,
 } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import { TouchableOpacity } from 'react-native'
 import { TextInput } from 'react-native-paper'
 import { useDispatch } from 'react-redux'
 import { RootTabParamList } from '../../components/appNavigator'
@@ -15,14 +13,10 @@ import { ArchiveStackParamList } from '../../components/appNavigator/ArchiveStac
 import Box from '../../components/base/Box'
 import Button from '../../components/base/Button'
 import Text from '../../components/base/Text'
-import { auth, db } from '../../config/firebase'
-import {
-	addProject,
-	deleteProject,
-	getProjects,
-	useProjects,
-} from '../../redux/hoursSlice'
+import { auth } from '../../config/firebase'
+import { addProject, getProjects, useProjects } from '../../redux/hoursSlice'
 import { AppDispatch } from '../../redux/store'
+import ProjectItem from '../../components/Archive/ProjectItem'
 
 type NavigationProp = CompositeNavigationProp<
 	BottomTabNavigationProp<RootTabParamList, 'Archive'>,
@@ -54,45 +48,17 @@ const ArchiveScreen = () => {
 		<Box flex={1} bg="bg1">
 			<Box paddingHorizontal="m">
 				<Text variant="h1" color="text1">
-					Prosjektnavn: {projectName}
+					Legg til nytt prosjekt
 				</Text>
-				<TextInput placeholder="Prosjektnavn" onChangeText={setProjectName} />
+				<Box paddingVertical={'s'}>
+					<TextInput placeholder="Prosjektnavn" onChangeText={setProjectName} />
+				</Box>
+
 				<Button title="Legg til" onPress={onPress} />
 				{projects && (
 					<Box marginTop="s">
 						{projects.map((project) => (
-							<TouchableOpacity
-								onPress={() =>
-									navigation.navigate('AddHoursScreen', { project })
-								}
-								key={project.projectId}
-							>
-								<Box
-									bg="bg2"
-									padding="s"
-									paddingHorizontal="m"
-									marginBottom="s"
-									borderRadius={10}
-									flexDirection="row"
-									justifyContent="space-between"
-									alignItems="center"
-								>
-									<Text
-										marginLeft="s"
-										variant="body"
-										color="text2"
-										key={project.projectId}
-									>
-										{project.projectName}
-									</Text>
-									<Button
-										title={'Slett'}
-										onPress={() =>
-											dispatch(deleteProject({ id: project.projectId }))
-										}
-									/>
-								</Box>
-							</TouchableOpacity>
+							<ProjectItem project={project} navigation={navigation} />
 						))}
 					</Box>
 				)}
